@@ -112,11 +112,65 @@ h1 {
     text-align: center;
 }
 
-p {
+.p-justify {
+    text-align: justify;
+}
+
+.p-center {
     text-align: center;
+}
+
+a {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff0303;
+    text-decoration: none;
+}
+
+.section-main {
+    margin-top: 20px;
 }
 
 .section-content {
     padding: 10px;
     background-color: #3f3d3daa;
+    text-align: justify;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    padding: 20px;
+    font-weight: bold;
+    background-color: #ffffff20;
+}
+
+th, td {
+    /*border: 2px solid black;*/
+    padding: 10px;
+    text-align: left;
+}
+
+/* Afficher un encadré avec une photo de l'école à la position de
+la souris lorsque celle-ci survole un lien (<a>) */
+.tooltip {
+    position: absolute;
+    display: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.tooltip img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
 }

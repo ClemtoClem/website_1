@@ -33,6 +33,11 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
+
+
+
+
+
 function drawBackground() {
     var UPDATE_SPEED_WITH_MOUSE = true;
 
@@ -223,3 +228,55 @@ function drawBackground() {
 
 window.addEventListener('resize', drawBackground);
 window.addEventListener('load', drawBackground);
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Créer l'élément tooltip
+    var tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    document.body.appendChild(tooltip);
+
+    // Ajouter les événements de survol et de déplacement de la souris pour chaque lien
+    var links = document.querySelectorAll('a');
+    links.forEach(function(link) {
+        link.addEventListener('mouseenter', function(event) {
+            var imgSrc;
+            switch (link.id) {
+                case 'a-polytech':
+                    imgSrc = 'img/polytech-grenoble.jpg';
+                    break;
+                case 'a-IUT1':
+                    imgSrc = 'img/IUT1-grenoble.jpeg';
+                    break;
+                case 'a-lycee':
+                    imgSrc = 'img/lycee-les-eaux-claires-grenoble.jpg';
+                    break;
+                case 'a-TIMA':
+                    imgSrc = 'img/TIMA-grenoble.jpeg';
+                    break;
+                case 'a-Itancia':
+                    imgSrc = 'img/itancia-grenoble.png';
+                    break;
+                default:
+                    return;
+            }
+            tooltip.innerHTML = '<img src="' + imgSrc + '" alt="Image de l\'établissement">';
+            tooltip.innerHTML += '<p style=\"font-size:12px;\">' + document.getElementById(link.id).getAttribute("href") + '</p>';
+            tooltip.style.display = 'block';
+        });
+
+        link.addEventListener('mouseleave', function() {
+            tooltip.style.display = 'none';
+        });
+
+        link.addEventListener('mousemove', function(event) {
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY + 10 + 'px';
+        });
+    });
+});
+
