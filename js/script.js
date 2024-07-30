@@ -4,8 +4,8 @@ function toggleNav() {
     var content = document.querySelector('.content');
     var sections = document.querySelectorAll('.section');
     
-    if (navbar.style.width === "250px") {
-        navbar.style.width = "0";
+    if (navbar.style.left === "0px") {
+        navbar.style.left = "-250px";
         content.style.marginLeft = "0";
         hamburger.style.left = "15px";
         hamburger.classList.remove("change");
@@ -14,7 +14,7 @@ function toggleNav() {
             sections[i].style.marginTop = "45px";
         }
     } else {
-        navbar.style.width = "250px";
+        navbar.style.left = "0px";
         content.style.marginLeft = "250px";
         hamburger.style.left = "200px";
         hamburger.classList.add("change");
