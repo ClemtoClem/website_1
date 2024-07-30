@@ -1,66 +1,32 @@
-function toggleNav() {
-    var navbar = document.getElementById("myNavbar");
-    var hamburger = document.getElementById("hamburger");
-    var content = document.querySelector('.content');
-    var sections = document.querySelectorAll('.section');
-    var sections_footer = document.querySelectorAll('.section-footer');
-    
-    if (navbar.style.left === "0px") {
-        navbar.style.left = "-250px";
-        content.style.marginLeft = "0px";
-        hamburger.style.left = "15px";
-        hamburger.classList.remove("change");
-        // Modification de la marge haute des sections (sauf la première)
-        for (var i = 0; i < sections.length; i++) {
-            sections[i].style.marginTop = "45px";
-        }
-        for (var i = 0; i < sections_footer.length; i++) {
-            console.log(sections_footer[i].innerHTML);
-            sections_footer[i].style.paddingLeft = "10px";
-            sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
-        }
-    } else {
-        navbar.style.left = "0px";
-        content.style.marginLeft = "250px";
-        hamburger.style.left = "200px";
-        hamburger.classList.add("change");
-        // Modification de la marge haute des sections (sauf la première)
-        for (var i = 0; i < sections.length; i++) {
-            sections[i].style.marginTop = "0px";
-        }
-        for (var i = 0; i < sections_footer.length; i++) {
-            sections_footer[i].style.paddingLeft = "260px";
-            sections_footer[i].style.width = document.body.clientWidth - 270 + "px";
-        }
-    }
-}
 
-function showSection(sectionId) {
-    var sections = document.querySelectorAll('.section');
-    sections.forEach(function(section) {
-        section.classList.remove('active');
-    });
-    document.getElementById(sectionId).classList.add('active');
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    var sections = document.querySelectorAll('.section');
-    var sections_footer = document.querySelectorAll('.section-footer');
-
-    for (var i = 0; i < sections.length; i++) {
-        sections[i].style.marginTop = "45px";
-    }
-    for (var i = 0; i < sections_footer.length; i++) {
-        console.log(sections_footer[i].innerHTML);
-        sections_footer[i].style.paddingLeft = "10px";
-        sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
-    }
-})
+/* Global events */
+var windowInfo = {
+    innerWidth : window.innerWidth,
+    innerHeight : window.innerHeight,
+    mouseInside : true,
+    mouseX: 0,
+    mouseY: 0
+};
+document.addEventListener('mousemove', function(event) {
+    windowInfo.mouseX = event.clientX;
+    windowInfo.mouseY = event.clientY;
+});
+document.addEventListener('mouseenter', function() {
+    console.log('mouseenter');
+    windowInfo.mouseInside = true;
+});
+document.addEventListener('mouseleave', function() {
+    console.log('mouseleave');
+    windowInfo.mouseInside = false;
+});
+window.addEventListener('resize', function() {
+    windowInfo.innerWidth = window.innerWidth;
+    windowInfo.innerHeight = window.innerHeight;
+});
 
 
 
-
-
+/* Background animation ans events */
 function drawBackground() {
     var UPDATE_SPEED_WITH_MOUSE = true;
 
@@ -146,6 +112,13 @@ function drawBackground() {
         } else {
             var mouseX = event.clientX;
             var mouseY = event.clientY;
+
+            if (windowInfo.mouseInside === false) {
+                // L'utilisateur a déplacé la souris hors de la fenêtre
+                targetSpeedx = 0;
+                targetSpeedy = 0;
+                return;
+            }
 
             // Calculer la distance par rapport au centre du canvas
             var centerX = width / 2;
@@ -256,6 +229,69 @@ window.addEventListener('load', drawBackground);
 
 
 
+function toggleNav() {
+    var navbar = document.getElementById("myNavbar");
+    var hamburger = document.getElementById("hamburger");
+    var content = document.querySelector('.content');
+    var sections = document.querySelectorAll('.section');
+    var sections_footer = document.querySelectorAll('.section-footer');
+    
+    if (navbar.style.left === "0px") {
+        navbar.style.left = "-250px";
+        content.style.marginLeft = "0px";
+        hamburger.style.left = "15px";
+        hamburger.classList.remove("change");
+        // Modification de la marge haute des sections (sauf la première)
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.marginTop = "45px";
+        }
+        for (var i = 0; i < sections_footer.length; i++) {
+            console.log(sections_footer[i].innerHTML);
+            sections_footer[i].style.paddingLeft = "10px";
+            sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
+        }
+    } else {
+        navbar.style.left = "0px";
+        content.style.marginLeft = "250px";
+        hamburger.style.left = "200px";
+        hamburger.classList.add("change");
+        // Modification de la marge haute des sections (sauf la première)
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.marginTop = "0px";
+        }
+        for (var i = 0; i < sections_footer.length; i++) {
+            sections_footer[i].style.paddingLeft = "260px";
+            sections_footer[i].style.width = document.body.clientWidth - 270 + "px";
+        }
+    }
+}
+
+function showSection(sectionId) {
+    var sections = document.querySelectorAll('.section');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var sections = document.querySelectorAll('.section');
+    var sections_footer = document.querySelectorAll('.section-footer');
+
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.marginTop = "45px";
+    }
+    for (var i = 0; i < sections_footer.length; i++) {
+        //console.log(sections_footer[i].innerHTML);
+        sections_footer[i].style.paddingLeft = "10px";
+        sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
+    }
+})
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // Créer l'élément tooltip
@@ -303,3 +339,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+
+
+
+
+function toggleProjectNav() {
+    var navbar = document.getElementById("projectNavbar");
+    
+   
+}
+
+function showProjectSection(sectionId) {
+    var sections = document.querySelectorAll('.section-main');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+})
