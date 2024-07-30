@@ -3,15 +3,21 @@ function toggleNav() {
     var hamburger = document.getElementById("hamburger");
     var content = document.querySelector('.content');
     var sections = document.querySelectorAll('.section');
+    var sections_footer = document.querySelectorAll('.section-footer');
     
     if (navbar.style.left === "0px") {
         navbar.style.left = "-250px";
-        content.style.marginLeft = "0";
+        content.style.marginLeft = "0px";
         hamburger.style.left = "15px";
         hamburger.classList.remove("change");
         // Modification de la marge haute des sections (sauf la première)
-        for (var i = 1; i < sections.length; i++) {
+        for (var i = 0; i < sections.length; i++) {
             sections[i].style.marginTop = "45px";
+        }
+        for (var i = 0; i < sections_footer.length; i++) {
+            console.log(sections_footer[i].innerHTML);
+            sections_footer[i].style.paddingLeft = "10px";
+            sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
         }
     } else {
         navbar.style.left = "0px";
@@ -19,8 +25,12 @@ function toggleNav() {
         hamburger.style.left = "200px";
         hamburger.classList.add("change");
         // Modification de la marge haute des sections (sauf la première)
-        for (var i = 1; i < sections.length; i++) {
-            sections[i].style.marginTop = "0";
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.marginTop = "0px";
+        }
+        for (var i = 0; i < sections_footer.length; i++) {
+            sections_footer[i].style.paddingLeft = "260px";
+            sections_footer[i].style.width = document.body.clientWidth - 270 + "px";
         }
     }
 }
@@ -33,6 +43,19 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    var sections = document.querySelectorAll('.section');
+    var sections_footer = document.querySelectorAll('.section-footer');
+
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.marginTop = "45px";
+    }
+    for (var i = 0; i < sections_footer.length; i++) {
+        console.log(sections_footer[i].innerHTML);
+        sections_footer[i].style.paddingLeft = "10px";
+        sections_footer[i].style.width = document.body.clientWidth - 20 + "px";
+    }
+})
 
 
 
