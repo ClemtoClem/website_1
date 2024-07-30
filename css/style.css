@@ -25,7 +25,8 @@ canvas {
     z-index: 1;
     top: 0;
     left: -250px;
-    background-color: #111;
+    background-color: #000000aa;
+    backdrop-filter: blur(20px); /* Effet de flou */
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -97,7 +98,7 @@ canvas {
 .section-header {
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.08); /* Couleur de fond translucide */
+    background-color: #ffffff14; /* Couleur de fond translucide */
     backdrop-filter: blur(10px); /* Effet de flou */
     z-index: 1000; /* Assure que le header reste au premier plan */
 }
@@ -105,7 +106,13 @@ canvas {
 h1, h2 { 
     margin: 0;
     font-family: 'Leckerli One', cursive;
-    text-shadow: 0 2px rgba(0,0,0,.5);
+    text-shadow: 0 2px #00000080;
+}
+
+h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #ffffff20;
 }
 
 h1 {
@@ -158,6 +165,7 @@ a:hover {
 }
 
 table {
+    margin: 0;
     border-collapse: collapse;
     width: 100%;
 }
@@ -169,7 +177,7 @@ thead {
 }
 
 th, td {
-    /*border: 2px solid black;*/
+    border: 2px solid #ffffff20;
     padding: 10px;
     text-align: left;
 }
@@ -180,7 +188,7 @@ la souris lorsque celle-ci survole un lien (<a>) */
     position: absolute;
     display: none;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #000000cc;
     color: #fff;
     border-radius: 5px;
     z-index: 1000;
