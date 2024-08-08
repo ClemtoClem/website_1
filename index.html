@@ -20,25 +20,113 @@
 
 <div id="myNavbar" class="navbar">
     <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#" onclick="showSection('cv')">Mon CV</a>
-    <a href="#" onclick="showSection('hardware')">Mes projets hardware</a>
-    <a href="#" onclick="showSection('software')">Mes projets software</a>
+    <a href="#" onclick="showSection('about')">About Me</a>
+    <a href="#" onclick="showSection('cv')">My Curriculum Vitae</a>
+    <a href="#" onclick="showSection('projects')">My projects</a>
     <a href="#" onclick="showSection('contacts')">Contacts</a>
 </div>
 
 <div class="content">
+    <!-- Home Section -->
     <div id="home" class="section active">
-        <h1>CHARRIERE Clément</h1>
-        <div class="section-main">
-            <p class="p-center">Bienvenue sur ma page personnelle</p>
-            <p class="p-center">Cliquez sur le bouton en haut à gauche pour ouvrir la barre de navigation</p>
+        <div class="section-header">
+            <button id="btn-fr" class="btn-active">français</button>
+            <button id="btn-en">english</button>
+
+            <h1>CHARRIERE Clément</h1>
         </div>
-        <div class="section-footer">
-            <p class="p-right">Dernière modification 30/07/2024</p>
+
+        <div class="section-fr">
+            <div class="section-main">
+                <p class="p-center">Bienvenue sur ma page personnelle</p>
+                <p class="p-center">Cliquez sur le bouton en haut à gauche pour ouvrir la barre de navigation</p>
+            </div>
+        
+            <div class="section-footer">
+                <p class="p-right">Dernière modification 30/07/2024</p>
+            </div>
+        </div>
+
+        <div class="section-en">
+            <div class="section-main">
+                <p class="p-center">Welcome to my personal page</p>
+                <p class="p-center">Click the button at the top left to open the navigation bar</p>
+            </div>
+
+            <div class="section-footer">
+                <p class="p-right">Last modification 30/07/2024</p>
+            </div>
         </div>
     </div>
+
+    <!-- About me Section -->
+    <div id="about" class="section">
+        <div class="section-fr">
+            <div class="section-header" style="padding-left: 0px;">
+                <h1>À propos de moi</h1>
+                <p class="p-center">* * *</p>
+            </div>
+
+            <div class="section-main">
+                <div class="section-content">
+                    <p class="p-justify">
+                        Bonjour, je m'appelle Charriere Clément<br>
+                        <br>
+                    </p>
+                    <p class="p-justify indent">
+                        Je suis actuellement étudiant en 2ème année d'école d'ingénieur du réseau Polytech à Grenoble.
+                        J'ai intégré cette école en 2022 après avoir obtenu mon BAC+2 de "Génie électrique et informatique Industrielle" (GEII) à l'IUT de Grenoble.
+                        Je suis la spécialité Informatique et "Informatique et Electronique des Systèmes Embarqués" (IESE).
+                        Mon parcours académique m'a permis d'acquérir des compétences en programmation, en électronique, réseaux, traitement du signal, systèmes embarqués, etc.
+                        Ce sont des domaines qui correspondesnt à mes intérêts personnels.
+                        Grâce à mes différents job d'été et à mes stages, j'ai acquis de l'expérience dans divers secteurs, en particuler l'électronique et de la recherche et développement.<br>
+                        <br>
+                        Je suis à la recherche d'un stage de 6 mois à partir de janvier 2025.<br>
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <p class="p-right">Dernière modification 30/07/2024</p>
+            </div>
+        </div>
+        <div class="section-en">
+            <div class="section-header" style="padding-left: 0px;">
+                <h1>About me</h1>
+                <p class="p-center">* * *</p>
+            </div>
+
+            <div class="section-main">
+                <div class="section-content">
+                    <p class="p-justify">
+                        Hello my name is Charriere Clément<br>
+                        <br>
+                    </p>
+                    <p class="p-justify indent">
+                        I am currently a 2nd year student at the Polytech network engineering school in Grenoble.
+                        I joined this school in 2022 after obtaining my BAC+2 in “Electrical Engineering and Industrial IT” (GEII) at the IUT of Grenoble.
+                        I am specializing in Computer Science and “Computer Science and Electronics of Embedded Systems” (IESE).
+                        My academic background allowed me to acquire skills in programming, electronics, networks, signal processing, embedded systems, etc.
+                        These are areas that match my personal interests.
+
+                        Through my various summer jobs and internships, I have gained experience in various sectors, including electronics and research and development.
+
+                        I am looking for a 6-month internship starting in January 2025, for my end-of-study internship.<br>
+                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <p class="p-right">Last modification 30/07/2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Curriculum Vitae Section -->
     <div id="cv" class="section">
-        <div class="section-header">
+        <div class="section-header" style="padding-left: 0px;">
             <h1>Mon CV</h1>
             <p class="p-center" style="padding-bottom: 10px;">Ici, tu peut visualiser mon CV.</p>
         </div>
@@ -109,7 +197,7 @@
         </div>
 
         <div class="section-main">
-            <h2>Mes voyages</h2>
+            <h2>Pétrone - Satiricon - Le banquet de Trimalcion</h2>
             <div class="section-content">
                 <p class="p-justify">Nondum efflauerat omnia, cum repositorium cum sue ingenti mensam occupauit. Mirari nos celeritatem
                     coepimus, et iurare ne gallum quidem gallinaceum tam cito percoqui potuisse, tanto quidem magis quod
@@ -126,26 +214,85 @@
                     Nec non cocus potione honoratus est, etiam argentea corona, poculumque in lance accepit Corinthia.</p>
             </div>
         </div>
-    </div>
 
-    <div id="hardware" class="section">
-        <div class="section-header">
-            <h1>Mes Projets Hardware</h1>
-            <p class="p-center" style="padding-bottom: 10px;">Voici mes projets hardware.</p>
+        <div class="section-footer">
+            <p class="p-right">Dernière modification 30/07/2024</p>
         </div>
     </div>
 
-    <div id="software" class="section">
-        <div class="section-header">
-            <h1>Mes Projets Software</h1>
-            <p class="p-center" style="padding-bottom: 10px;">Voici mes projets software.</p>
+    <!-- My projects Section -->
+    <div id="projects" class="section">
+        <div class="section-header" style="padding-left: 0px;">
+            <div class="section-fr">
+                <h1>Mes Projets</h1>
+                <p class="p-center" style="padding-bottom: 10px;">Voici mes projets hardware et software.</p>
+            </div>
+
+            <div class="section-en">
+                <h1>My Projets</h1>
+                <p class="p-center" style="padding-bottom: 10px;">Here are my hardware and software projects.</p>
+            </div>
+
+            <div class="buttons" style="text-align: center;">
+                <button id="btn-hardware" class="btn-active">Hardware</button>
+                <button id="btn-software">Software</button>
+            </div>
+        </div>
+
+        <div id="hardware" class="section">
+            <div class="section-fr">
+                <div class="section-main">
+                    <h2>Conception d'une boite à music</h2>
+                    <div class="section-content">
+                    </div>
+                </div>
+            </div>
+            <div class="section-en">
+                <div class="section-main">
+                    <h2>Creation of a music box</h2>
+                    <div class="section-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="software" class="section">
+            <div class="section-fr">
+                <div class="section-main">
+                    <h2>PolyAdventure - Programmation d'un jeu vidéo en C</h2>
+                    <div class="section-content">
+                    </div>
+                </div>
+
+                <div class="section-main">
+                    <h2>Drum kit project</h2>
+                    <div class="section-content">
+                    </div>
+                </div>
+            </div>
+            <div class="section-en">
+                <div class="section-main">
+                    <h2>PolyAdventure - Programming a video game in C</h2>
+                    <div class="section-content">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <p class="p-right">Dernière modification 30/07/2024</p>
         </div>
     </div>
 
+    <!-- Contacts Section -->
     <div id="contacts" class="section">
-        <div class="section-header">
+        <div class="section-header" style="padding-left: 0px;">
             <h1>Contacts</h1>
             <p></p>
+        </div>
+
+        <div class="section-footer">
+            <p class="p-right">Dernière modification 30/07/2024</p>
         </div>
     </div>
 </div>

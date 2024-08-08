@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #363636;
+    background-color: #222222;
     color: #f5f5f5;
     overflow: hidden;
 }
@@ -32,6 +32,7 @@ canvas {
     padding-top: 80px;
     font-family: 'Leckerli One', cursive;
     font-size: large;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -59,6 +60,7 @@ canvas {
     left: 15px;
     z-index: 2;
     transition: left 0.5s;
+    z-index: 1001;
 }
 
 .bar1, .bar2, .bar3 {
@@ -98,14 +100,6 @@ canvas {
     display: block;
 }
 
-.section-header {
-    position: sticky;
-    top: 0;
-    background-color: #ffffff14; /* Couleur de fond translucide */
-    backdrop-filter: blur(10px); /* Effet de flou */
-    z-index: 1000; /* Assure que le header reste au premier plan */
-}
-
 h1, h2 { 
     margin: 0;
     font-family: 'Leckerli One', cursive;
@@ -124,14 +118,25 @@ h1 {
 
 .p-justify {
     text-align: justify;
+    margin: 0px;
+    padding: 2px;
+}
+
+.indent {
+    /** On indente le texte de l'espace représentant 5 caractères */
+    text-indent: 3em;
 }
 
 .p-center {
     text-align: center;
+    margin: 0px;
+    padding: 2px;
 }
 
 .p-right {
     text-align: right;
+    margin: 0px;
+    padding: 2px;
 }
 
 a {
@@ -145,13 +150,34 @@ a:hover {
 }
 
 .section-main {
-    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    margin-top: 55px;
+    transition: 0.5s;
 }
 
 .section-content {
     padding: 10px;
     background-color: #3f3d3daa;
     text-align: justify;
+    transition: 0.5s;
+}
+
+.section-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
+    text-align: justify;
+    background-color: #ffffff14; /* Couleur de fond translucide */
+    backdrop-filter: blur(10px); /* Effet de flou */
+    z-index: 999; /* Assure que le header reste au premier plan */
+    transition: 0.5s;
 }
 
 .section-footer {
@@ -163,8 +189,11 @@ a:hover {
     padding-top: 4px;
     padding-bottom: 4px;
     width: 100%;
-    background-color: #3f3d3daa;
     text-align: justify;
+    background-color: #ffffff14; /* Couleur de fond translucide */
+    backdrop-filter: blur(10px); /* Effet de flou */
+    z-index: 999; /* Assure que le header reste au premier plan */
+    transition: 0.5s;
 }
 
 table {
@@ -202,3 +231,33 @@ la souris lorsque celle-ci survole un lien (<a>) */
     height: auto;
     border-radius: 5px;
 }
+
+
+
+button {
+    background-color: #000000;
+    color: #f5f5f5;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #292929;
+}
+
+.btn-active {
+    background-color: #816a6a;
+}
+
+.btn-active:hover {
+    background-color: #947a7a;
+}
+
+
+
+
+

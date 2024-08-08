@@ -1,6 +1,6 @@
 #  My Digital Resume
 
-View live demo here using github pages: [Live Demo](https://clemtoclem.github.io/MyWebsite/)
+My portfolio website built using HTML, CSS, and JavaScript. You can check it out [here](https://clemtoclem.github.io/MyWebsite/)
 
 # Author
 
